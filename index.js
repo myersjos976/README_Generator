@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const license = require('./utils/generateMarkdown.js');
 
-// Array of licenses
+// Array of licenses for user to choose from.
 const licenses = [
     "None",
     "Apache License 2.0",
@@ -21,7 +21,7 @@ const licenses = [
     "The Unlicense"
 ];
 
-// Array of questions
+// Array of questions for user to answer.
 const questions = [
     "Enter title:",
     "Enter description text:",
@@ -36,6 +36,9 @@ const questions = [
     "Enter desired file path location (i.e. C:/Users/userName/repoName):"
 ];
 
+// Array of responses from user.
+const responses = [];
+
 // Writes text from data to a README.md file at locations specified in fileName.
 function writeToFile(fileName, data)
  {
@@ -46,9 +49,10 @@ function writeToFile(fileName, data)
 
 /*
  Intializes README Generator
- Indentation was removed from README string for functionality and formatting reasons.
+ Calls generateMarkdown function from generateMarkdown.js
 */
-function init() {
+function init() 
+{
     console.log("Welcome to the README Generator!");
     inquirer
         .prompt([
@@ -90,12 +94,12 @@ function init() {
             {
                 type: 'input',
                 message: questions[7],
-                name: 'github',
+                name: 'email',
             },
             {
                 type: 'input',
                 message: questions[8],
-                name: 'email',
+                name: 'github',
             },
             {
                 type: 'rawlist',
@@ -110,48 +114,24 @@ function init() {
                 name: 'fileLocation',
             },
         ])
-        .then((response) => writeToFile(response.fileLocation, 
-`# ${response.title}  
-
-## Description  
-${response.description}  
-
-## Table of Contents  
-- [Installation](#installation)  
-- [Usage](#usage)  
-- [Contribution Guidelines](#contribution_guidelines)  
-- [Test Instructions](#test_instructions)  
-- [Credits](#credits)  
-- [License](#license)  
-
-## Installation  
-${response.installation}  
-
-## Usage  
-${response.usage}  
-
-## Contribution Guidelines  
-${response.contribution}  
-
-## Test Instructions  
-${response.test}  
-
-## Credits  
-${response.credits} 
-
-## Questions  
-For additional questions, here is my email:  
-${response.email}  
-  
-Link to my GitHub:
-${response.github}  
-
-## License  
-${response.license}`
-),
-(err) =>
-    err ? console.error(err) : console.log('SUCCESS!')
-);
+        .then((response) => 
+            writeToFile(response.fileLocation, license.generateMarkdown(
+                [
+                    response.title, 
+                    response.description, 
+                    response.installation, 
+                    response.usage, 
+                    response.contribution, 
+                    response.test, 
+                    response.credits, 
+                    response.github, 
+                    response.email, 
+                    response.license
+                ]
+            )),
+            (err) =>
+                err ? console.error(err) : console.log('SUCCESS!')
+        );
 }
 
 // Function call to initialize app
