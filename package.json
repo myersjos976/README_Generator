@@ -1,14 +1,23 @@
 {
-  "name": "static-site",
+  "name": "readme_generator",
   "version": "1.0.0",
-  "description": "",
+  "description": "Challenge 09 Assignment for Coding Bootcamp. Creates a README generator from user answers to prompts from the terminal. The terminal takes these responses and creates a README file for the user.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myersjos976/README_Generator.git"
+  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/myersjos976/README_Generator/issues"
+  },
+  "homepage": "https://github.com/myersjos976/README_Generator#readme",
   "dependencies": {
-    "inquirer": "8.2.4"
+    "inquirer": "^8.2.4"
   }
 }
