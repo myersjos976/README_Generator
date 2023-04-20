@@ -29,10 +29,10 @@
   
   ## Questions  
   For additional questions, here is my email:  
-  jt.myers976@gmail.com  
+  email@gmail.com  
     
   Link to my GitHub:
-  https://www.github.com/myersjos976  
+  www.github.com  
   
   ## License  
   MIT License  
