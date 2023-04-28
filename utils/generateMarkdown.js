@@ -145,8 +145,8 @@ function generateMarkdown(data)
   ## Table of Contents  
   - [Installation](#installation)  
   - [Usage](#usage)  
-  - [Contribution Guidelines](#contribution guidelines)  
-  - [Test Instructions](#test instructions)  
+  - [Contribution Guidelines](#contribution_guidelines)  
+  - [Test Instructions](#test_instructions)  
   - [Credits](#credits)  
   - [License](#license)  
   
@@ -156,10 +156,10 @@ function generateMarkdown(data)
   ## Usage  
   ${data[3]}  
   
-  ## Contribution Guidelines  
+  ## Contribution_Guidelines  
   ${data[4]}  
   
-  ## Test Instructions  
+  ## Test_Instructions  
   ${data[5]}  
   
   ## Credits  
