@@ -145,8 +145,8 @@ function generateMarkdown(data)
   ## Table of Contents  
   - [Installation](#installation)  
   - [Usage](#usage)  
-  - [Contribution Guidelines](#contribution_guidelines)  
-  - [Test Instructions](#test_instructions)  
+  - [Contribution Guidelines](#contribution guidelines)  
+  - [Test Instructions](#test instructions)  
   - [Credits](#credits)  
   - [License](#license)  
   
